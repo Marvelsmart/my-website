@@ -1,0 +1,83 @@
+
+body{
+	margin-left: -15px;
+	font-family: "Great Vibes", cursive;
+	min-height: 100vh;
+	background: linear-gradient(to right, #020225, #000);
+	margin-top: 10%;
+}
+.main-form h1{
+	text-transform: uppercase;
+	text-align: left;
+	color: darkblue;
+	font-size: 30px;
+}
+.main-form label{
+	text-align: left;
+	font-size: 14px;
+	color: grey;
+	margin-top: 10px;
+}
+.main-form h6{
+	text-align: left;
+	font-size: 12px;
+	color: grey;
+	margin-top: -20px;
+}
+.main-form h5{
+	text-align: left;
+	font-size: 12px;
+	color: grey;
+	margin-top: 20px;
+}
+.cfd .main-form{
+	width: 300px;
+	height: 700px;
+	display: flex;
+	flex-direction: column;
+	padding: 50px;
+	border-radius: 8px;
+	box-shadow: 0 0px 15px rgb(120, 120, 120);
+}
+.dfd .main-form{
+	width: 280px;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	padding: 50px;
+	border-radius: 8px;
+	box-shadow: 0 0px 15px rgb(120, 120, 120);
+}
+.main-form input{
+	width: 95%;
+	height: 40px;
+	border-radius: 6px;
+	margin-top: 10px;
+	box-shadow: 0 0px 15px rgb(120, 120, 120);
+
+}
+
+.main-form button{
+	width: 95%;
+	height: 35px;
+	border-radius: 6px;
+	margin-top: 25px;
+	background-color: darkblue;
+	opacity: 0.7;;
+	color: white;
+}
+.main-form button:hover{
+	background-color: blue;
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+/*Product page*/
+.header {
+	text-align: center;
+	padding: 50px;
+	background-color: black;
+	color: white;
+	box-shadow: 0 0px 15px rgb(120, 120, 120);
+	background: linear-gradient(to right, #000, #020225);
+}
