@@ -2,7 +2,7 @@ body {
     font-family: "Great Vibes", cursive;
     min-height: 100vh;
     margin: 0;
-    background: linear-gradient(to right, #020225, #000);
+    background-color:#F5F5F5;
 }
 
 nav {
@@ -15,7 +15,7 @@ nav {
 }
 
 .name {
-    color: white;
+    color: wheat;
     font-size: 300%;
     font-weight: bold;
     margin-left: 20px;
@@ -57,7 +57,7 @@ nav {
     display: flex;
     align-items: center;
     padding: 3%;
-    color: white;
+    color: linear-gradient(to right, #000, #020225);;
     flex-wrap: wrap;
 }
 
@@ -67,8 +67,7 @@ nav {
 .content-cont1 h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #FFFDD0;
-    opacity: 0.5;
+    color: black;
 }
 .content-cont1 p {
     font-size: 1.1rem;
@@ -106,12 +105,10 @@ nav {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     cursor: pointer;
-    opacity: 0.5;
 }
 .content-cont2 img:hover {
     transform: scale(1.05);
 }
-
 
 .footer {
     text-align: center;
@@ -124,9 +121,9 @@ nav {
 
 /* product */
 .HD1 {
-    text-align: center;
+    text-align: left;
     width: 100%;
-    color: white;	
+    color: black;	
 }
 
 .products {
@@ -141,18 +138,19 @@ nav {
 }
 
 .product {
-    position: relative; /* Needed for absolute child positioning */
+    position: relative;
     flex: 1 1 calc(15% - 15px);
     max-width: calc(15% - 15px);
     height: 300px;
-    background: rgba(0,0,0,0.3);
+    background-color: #000;
+    background: rgb(1, 1, 27);
     border-radius: 8px;
     box-shadow: 0 0px 15px rgb(120, 120, 120);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 30px;
-    overflow: hidden; /* Ensures hidden description won’t spill out */
+    overflow: hidden;
 }
 
 .H-Description {
@@ -165,13 +163,13 @@ nav {
     color: #fff;
     padding: 20px;
     text-align: center;
-    transform: translateY(100%); /* Hidden below */
+    transform: translateY(100%);
     opacity: 0;
     transition: all 0.4s ease-in-out;
 }
 
 .product:hover .H-Description {
-    transform: translateY(0); /* Slides up */
+    transform: translateY(0);
     opacity: 1;
 }
 
@@ -195,7 +193,7 @@ nav {
 
 .btn {
     padding: 10px 20px;
-    background-color: darkblue;
+    background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
@@ -206,7 +204,7 @@ nav {
     background-color: navy;
 }
 section {
-    color: #FDF5E6;
+    color: black;
 }
 .btb{
     text-decoration: none;
@@ -228,19 +226,19 @@ section {
 }
 @media (max-width: 992px) {
   .product {
-    flex: 1 1 calc(33.333% - 20px); /* 3 per row on tablets */
+    flex: 1 1 calc(33.333% - 20px);
     max-width: calc(33.333% - 20px);
   }
 }
 @media (max-width: 768px) {
   .product {
-    flex: 1 1 calc(50% - 20px); /* 2 per row on small tablets */
+    flex: 1 1 calc(50% - 20px);
     max-width: calc(50% - 20px);
   }
 }
 @media (max-width: 480px) {
   .product {
-    flex: 1 1 100%; /* 1 per row on mobile */
+    flex: 1 1 100%;
     max-width: 100%;
   }
 }
@@ -325,14 +323,14 @@ table {
     width: 80%;
     margin: 20px auto;
     border-collapse: collapse;
-    box-shadow: 0 0px 15px rgb(120, 120, 120);
+    box-shadow: 0 0px 15px rgb(0, 0, 0);
 
 }
 th, td {
-    border: 1px solid #ddd;
+    border: 1px solid black;
     padding: 12px;
     text-align: left;
-    color: thistle;
+    color: black;
 }
 
 .T-Img img{
@@ -345,4 +343,61 @@ th, td {
     margin-Top: -40px;
     font-size: 80px;
 
+}
+
+form {
+    max-width: 600px;
+    margin-bottom: auto;
+    padding: 50px;
+    border-radius: 10px;
+    align-items: left;
+    background: linear-gradient(to right, #000, #020225);
+    ;
+}
+
+form label {
+    font-size: 1.1em;
+    color: #ccc;
+    margin-bottom: 8px;
+    display: block;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+}
+
+form button {
+    background-color: #f76c6c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #ff4e4e;
+}
+.contact{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contactQ{
+    width: 500px;
+    height: 700px;
+    margin-left: 70px;
+}
+.contactR {
+    width: 500px;
+    height: 700px;
+    margin-right: 280px;
 }
