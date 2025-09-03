@@ -139,8 +139,8 @@ nav {
 
 .product {
     position: relative;
-    flex: 1 1 calc(15% - 15px);
-    max-width: calc(15% - 15px);
+    flex: 1 1 calc(17 - 15px);
+    max-width: calc(17% - 15px);
     height: 300px;
     background-color: #000;
     background: rgb(1, 1, 27);
@@ -400,4 +400,27 @@ form button:hover {
     width: 500px;
     height: 700px;
     margin-right: 280px;
+}
+.cart-section{
+    display:flex;
+    align-items: left;
+    justify-content: space-between;
+}
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+#backToTop:hover {
+  background-color: gray;
 }
