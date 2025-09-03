@@ -110,7 +110,7 @@ nav {
     transform: scale(1.05);
 }
 
-.footer {
+footer {
     text-align: center;
     padding: 1%;
     background: linear-gradient(to right, #000, #020225);
