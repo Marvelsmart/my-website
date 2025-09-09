@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "product-picture": "../Images/Refigerator.jpeg",
+      "product-name": "LG 260L Double Door Refrigerator – Smart Inverter Compressor, Energy Efficient",
+      "product-price": "$150",
+      "description": "Keep your food fresh and organized with this spacious double door refrigerator. Features smart inverter technology for energy efficiency and quiet operation."
+    },
+    {
+      "product-picture": "../Images/Shoes_prd.jpg",
+      "product-name": "Running Shoes – Lightweight",
+      "product-price": "$100",
+      "description": "Designed for comfort and performance, these running shoes are perfect for athletes and casual runners alike. Enjoy superior cushioning and support with every step."
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+
+Product-pictures | Product-name | Price | Description
+../Images/Laptop_prd.jpg | Dell Inspiron 15.6" Laptop – Intel Core i5, 8GB RAM, 512GB SSD | $100 | A sleek and powerful laptop designed for work, study, and entertainment. Equipped with fast performance, long battery life, and crisp display.
+../Images/TV.jpeg | Samsung 55" 4K UHD Smart TV – Crystal Display, HDR, Voice Control | $150 | Experience stunning visuals and immersive sound with this 4K UHD Smart TV. Enjoy your favorite shows and movies with vibrant colors and sharp details.

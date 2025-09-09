@@ -2,7 +2,7 @@ body {
     font-family: "Great Vibes", cursive;
     min-height: 100vh;
     margin: 0;
-    background-color:#F5F5F5;
+    background-color: #c0bfc0;
 }
 
 nav {
@@ -191,17 +191,51 @@ footer {
     text-align: center;
 }
 
-.btn {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 15px;
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
-.btn:hover {
-    background-color: navy;
+
+.dropdown button {
+  background-color: blue;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hide dropdown content by default */
+.dropdown .contentt {
+  display: none;            /* FIX: instead of inline-block */
+  position: absolute;
+  background-color: blue;
+  min-width: 150px;
+  box-shadow: 2px 2px 5px black;
+  z-index: 1;               /* makes sure it’s above other elements */
+}
+
+/* Links inside dropdown */
+.dropdown a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.dropdown a:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .contentt {
+  display: block;
+}
+
+/* Change button color when hovered */
+.dropdown:hover button {
+  background-color: white;
+  color: blue;
 }
 section {
     color: black;
@@ -423,4 +457,86 @@ form button:hover {
 
 #backToTop:hover {
   background-color: gray;
+}
+
+.HD1 img{
+    display: flex;
+    width: 260px;
+    height: 340px;
+}
+/* Newsletter Form Styling */
+.p-form {
+  max-width: 400px;
+  margin: 0 auto;  /* Reduced margin so it stays near top */
+  padding: 20px;
+  background: #ffffff;
+  border: 2px solid #2e7d32; /* deep green */
+  border-radius: 8px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.p-form h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.p-form h5 {
+  color: #1565c0; /* blue text */
+  font-weight: normal;
+  margin: 10px 0;
+}
+
+.p-form input[type="text"] {
+  width: 85%;
+  padding: 10px;
+  margin: 15px 0;
+  border: 1px solid #2e7d32;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.p-form input[type="text"]:focus {
+  border-color: #1b5e20;
+  box-shadow: 0 0 5px rgba(46, 125, 50, 0.4);
+}
+
+.p-form button {
+  width: 90%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #2e7d32;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.p-form button h5 {
+  color: #fff;
+  margin: 0;
+}
+
+.p-form button:hover {
+  background: #1b5e20;
+}
+
+.p-form .newsletterQ {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.p-form .newsletterQ h5 {
+  font-size: 13px;
+  color: #1565c0; /* blue text */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.p-form input[type="checkbox"] {
+  accent-color: #2e7d32;
+  cursor: pointer;
 }
