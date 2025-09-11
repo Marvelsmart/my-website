@@ -191,52 +191,50 @@ footer {
     text-align: center;
 }
 
+.menu {
+  padding: 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+}
+
+.menu a:hover {
+  color: blue;
+}
+
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-.dropdown button {
-  background-color: blue;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Hide dropdown content by default */
 .dropdown .contentt {
-  display: none;            /* FIX: instead of inline-block */
+  display: none;
   position: absolute;
   background-color: blue;
   min-width: 150px;
   box-shadow: 2px 2px 5px black;
-  z-index: 1;               /* makes sure it’s above other elements */
+  z-index: 1;
 }
 
-/* Links inside dropdown */
-.dropdown a {
+.dropdown .contentt a {
   display: block;
+  padding: 10px 15px;
   color: white;
   text-decoration: none;
-  padding: 10px 15px;
 }
 
-.dropdown a:hover {
-  background-color: white;
-  color: black;
+.dropdown .contentt a:hover {
+  background: white;
+  color: blue;
 }
 
-/* Show dropdown on hover */
 .dropdown:hover .contentt {
   display: block;
 }
 
-/* Change button color when hovered */
-.dropdown:hover button {
-  background-color: white;
-  color: blue;
-}
 section {
     color: black;
 }

@@ -1,0 +1,47 @@
+Product 1:
+Name: Wireless Noise-Cancelling Headphones
+Description: Premium over-ear headphones with deep bass, active noise cancellation, and up to 30 hours of battery life.
+Price: $110
+Image: ../Images1/smartspeaker.jpg
+
+Product 2:
+Name: 4K Action Camera
+Description: Compact and waterproof action camera with 4K recording, wide-angle lens, and built-in Wi-Fi for instant sharing.
+Price: $95
+Image: ../Images1/Camera.png
+
+Product 3:
+Name: Smart Home Speaker
+Description: Voice-controlled smart speaker with powerful sound, Bluetooth connectivity, and integrated virtual assistant.
+Price: $85
+Image: ../Images1/Smartspeaker.jpg
+
+Product 4:
+Name: Fitness Tracker Band
+Description: Lightweight fitness tracker with heart rate monitoring, sleep tracking, step counter, and water resistance.
+Price: $60
+Image: ../Images1/Fitnessband.jpg
+
+Product 5:
+Name: Gaming Keyboard
+Description: Mechanical RGB gaming keyboard with customizable backlighting, durable switches, and ergonomic design.
+Price: $75
+Image: ../Images1/gamingkeyboard.jpg
+
+Product 6:
+Name: Drone with HD Camera
+Description: Foldable drone with 1080p HD camera, gesture control, altitude hold, and easy-to-use controls.
+Price: $140
+Image: ../Images1/drone.png
+
+Product 7:
+Name: Portable Bluetooth Speaker
+Description: Compact, waterproof Bluetooth speaker with rich bass, long battery life, and stereo sound pairing.
+Price: $55
+Image: ../Images1/Bluetooth speaker.jpg
+
+Product 8:
+Name: Wireless Charging Pad
+Description: Sleek and fast wireless charging pad compatible with smartphones, smartwatches, and earbuds.
+Price: $40
+Image: ../Images1/Wireless charger.jpg

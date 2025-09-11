@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "Product 1": {
+        "Name": "Smartwatch Pro X",
+        "Description": "Advanced smartwatch with AMOLED display, fitness tracking, GPS, and 7-day battery life.",
+        "Price": "$180",
+        "Image": "../Imagep2/prowatch.jpg"
+      }
+    },
+    {
+      "Product 2": {
+        "Name": "Electric Scooter",
+        "Description": "Foldable electric scooter with 25km range, LED lights, and quick charging capability.",
+        "Price": "$350",
+        "Image": "../Imagep2/Scooter2.png"
+      }
+    },
+    {
+      "Product 3": {
+        "Name": "Wireless Earbuds",
+        "Description": "Compact earbuds with noise cancellation, touch controls, and 24-hour playtime with case.",
+        "Price": "$70",
+        "Image": "../Imagep2/earbuds.jpg"
+      }
+    },
+    {
+      "Product 4": {
+        "Name": "Smart Thermostat",
+        "Description": "Wi-Fi enabled thermostat with energy-saving modes, voice assistant compatibility, and mobile app control.",
+        "Price": "$130",
+        "Image": "../Imagep2/Smart thermostat.jpg"
+      }
+    },
+    {
+      "Product 5": {
+        "Name": "Gaming Mouse",
+        "Description": "High-precision gaming mouse with customizable RGB lighting, programmable buttons, and ergonomic grip.",
+        "Price": "$60",
+        "Image": "../Imagep2/Gamingmouse.jpg"
+      }
+    },
+    {
+      "Product 6": {
+        "Name": "DSLR Camera",
+        "Description": "Professional DSLR camera with 24.1MP sensor, interchangeable lenses, and 4K video recording.",
+        "Price": "$450",
+        "Image": "../Imagep2/camera.jpg"
+      }
+    },
+    {
+      "Product 7": {
+        "Name": "Smart Air Purifier",
+        "Description": "HEPA filter air purifier with app control, air quality monitor, and silent operation mode.",
+        "Price": "$160",
+        "Image": "../Imagep2/Smartair.png"
+      }
+    },
+    {
+      "Product 8": {
+        "Name": "Virtual Reality Headset",
+        "Description": "Immersive VR headset with motion tracking, 110° field of view, and adjustable comfort straps.",
+        "Price": "$220",
+        "Image": "../Imagep2/Virtualheadset.jpg"
+      }
+    }
+  ]
+}

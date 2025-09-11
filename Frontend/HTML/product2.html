@@ -1,28 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../CSS/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <link rel="stylesheet" href="../CSS/index.css"> 
 </head>
 <body>
-    <div id="menu-placeholder"></div>
-    <table border="1" id="productTable4">
-        <tr>
-            <th>Product-pictures</th>
-            <th>Product-name</th>
-            <th>Price</th>
-            <th>Description</th>
-            <th></th>
-        </tr>
-    </table>
+  <div id="menu-placeholder"></div>
 
-    <button id="backToTop">^</button>
-    <h3 style="color: black; text-align: center;">Ready to make a purchase? <a href="Product.html">Click here</a> to explore our products and buy now!</h3>
-    <footer>
-    <p>&copy; 2025 PrimeMart. All Rights Reserved.</p>
-  </footer>
-    <script src="../Js/java.js"></script>
+  <div class="cart-section">
+    <a href="Cart.html">
+      <img src="../Images/shop.jpg" alt="cart" class="prdimg">
+    </a>
+
+    <header class="HD1">
+      <h1>Our Products</h1>
+      <p>Explore our wide range of products designed to meet your needs. From electronics to fashion, we have it all!</p>
+      <img src="../Images/phonebook.png" alt="phone">
+
+      <!-- Newsletter -->
+      <form class="p-form">
+        <div class="newsletteri"></div>
+        <h3>New to PrimeMart !!!</h3>
+        <h5>Subscribe to our newsletter to get updates on our latest offers!</h5>
+        <input type="text" placeholder="E-mail address" name="newsletter">
+        <button><h5>Subscribe</h5></button>
+        <div class="newsletterQ">
+          <h5><input type="checkbox" name="checkbox"> I agree to PrimeMart's Privacy and Cookie Policy. You can unsubscribe from newsletters at any time.</h5>
+        </div>
+      </form>
+    </header>
+
+    <section class="products" id="products"></section>
+  </div>
+
+  <!-- Payment form -->
+  <div class="payment">
+    <span class="close">X</span>
+    <h1 class="payTitle">Personal Information</h1>
+    <label>Name and surname</label>
+    <input type="text" placeholder="Enter your name and surname" class="payInput">
+    <label>Address</label>
+    <input type="text" placeholder="Enter your address" class="payInput">
+    <label>Phone Number</label>
+    <input type="text" placeholder="Enter your phone number" class="payInput">
+
+    <h1 class="payTitle">Card Information</h1>
+    <div class="cardIcons">
+      <img src="visa.png" alt="Visa" width="40" class="CardIcon">
+      <img src="mastercard.png" alt="MasterCard" width="40" class="CardIcon">
+    </div>
+    <input type="text" placeholder="Card Number" class="cardNumber">
+
+    <div class="cardInfo">
+      <input type="text" placeholder="MM" class="CardMM">
+      <input type="text" placeholder="YY" class="CardYY">
+      <input type="text" placeholder="CVV" class="CardCVV">
+    </div>
+    <button class="paybutton">CheckOut</button>
+  </div>
+
+  <button id="backToTop">^</button>
+
+  <!-- Scripts -->
+  <script src="../Js/java.js"></script>
+  <script src="../Js/txt.js"></script>
 </body>
 </html>
