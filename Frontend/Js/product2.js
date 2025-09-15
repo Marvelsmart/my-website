@@ -24,11 +24,11 @@ async function loadProducts() {
       product.classList.add("product");
 
       product.innerHTML = `
-        <img src="${item.image}" alt="${item.title}" class="product-img">
-        <h2 class="product-title">${item.title}</h2>
-        <p class="product-price">$${item.price}</p
-        <p class="H-Description">
-        <p class="H-Description">${item.description}</p
+        <img src="${item.image}" alt="${item.title}" style="height:200px"class="product-img">
+        <p class="product-title">${item.title}</p>
+        <p class="product-price">${item.price}</p
+        <pclass="H-Description">
+        <p class="H-Description">${item.description}
         <button class="btn">Buy Now</button>
         <button class="btb"><a href="Cart.html">Add to Cart</a></button>
         </p>

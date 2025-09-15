@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage-Product</title>
+  <link rel="stylesheet" href="../../CSS/Admin.css">
+</head>
+<body>
+  <header class="HD1">
+    <h1>Manage Products</h1>
+    <p>Welcome to the Product Management Page. Here you can add, update, or remove products from your inventory.</p>
+  </header>
+
+  <main class="page-container">
+    <!-- Manage Products Card -->
+    <form class="product-form" id="manageCard">
+      <h3>Product Actions</h3>
+      <h5>Use the options below to manage your products effectively.</h5>
+      <button type="button" id="addBtn"><h5>Add New Product</h5></button>
+      <button type="button"><h5>Update Existing Product</h5></button>
+      <button type="button"><h5>Remove Product</h5></button>
+      <div class="productQ">
+        <h5><input type="checkbox" name="checkbox">I agree to the Product Management Terms and Conditions.</h5>
+      </div>
+    </form>
+
+    <!-- Add Product Card (hidden initially) -->
+    <!-- Add Product Card (hidden initially) -->
+<form class="add-form" id="addCard">
+  <h3>Add New Product</h3>
+  <input type="text" placeholder="Product Name" required>
+  <input type="number" placeholder="Price" required>
+
+  <!-- Image upload instead of Category -->
+  <label for="productImage">Product Image</label>
+  <input type="file" id="productImage" accept="image/*" required>
+
+  <textarea placeholder="Description"></textarea>
+  
+  <button type="submit" id="addBtn">Save Product</button>
+  <button type="button" id="backBtn" class="back">⬅ Back</button>
+</form>
+
+  </main>
+
+  <script type="module" src="../../Js/Admin.js"></script>
+
+</body>
+</html>

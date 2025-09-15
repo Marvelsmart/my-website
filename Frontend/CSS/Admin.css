@@ -1,0 +1,259 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.HD1 {
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+.HD1 h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.HD1 p {
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+.HD1 img {
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #fff;
+  padding: 5px;
+}
+
+/* Admin form section */
+.admin-form {
+  background: #fff;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+  text-align: center;
+}
+.admin-form h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+.admin-form .sub {
+  color: #555;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+/* Buttons container */
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons (styled links) */
+.btn {
+  display: block;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: #3498db;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease-in-out, transform 0.06s ease;
+}
+.btn:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Checkbox */
+.adminQ {
+  text-align: left;
+  font-size: 0.95rem;
+  padding-left: 6px;
+}
+.adminQ input {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .HD1 h1 { font-size: 1.4rem; }
+  .admin-form { margin: 1rem; padding: 1rem; }
+}
+
+/* ---------- Manage Products Page Extra Styling ---------- */
+
+/* Header tweaks for Product Management */
+.HD1 img {
+    width: 110px; /* slightly bigger image */
+    margin: 1rem auto;
+    border-radius: 12px;
+    background: #fff;
+    padding: 8px;
+}
+
+/* Product Form card adjustments */
+.product-form {
+    background: #fff;
+    max-width: 520px;
+    margin: 2rem auto;
+    padding: 1.8rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.product-form h3 {
+    color: #2c3e50;
+    margin-bottom: 0.6rem;
+}
+
+.product-form h5 {
+    color: #555;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.producti {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.product-form button {
+    display: block;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out, transform 0.06s ease;
+}
+
+.product-form button:hover {
+    background: #16a085;
+    transform: translateY(-2px);
+}
+
+.product-form button:active {
+    transform: translateY(0);
+}
+
+.productQ {
+    text-align: left;
+    font-size: 0.95rem;
+    padding-left: 6px;
+    margin-top: 1rem;
+}
+
+.productQ input {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@media (max-width: 480px) {
+    .HD1 h1 { font-size: 1.5rem; }
+    .product-form { margin: 1rem; padding: 1rem; }
+}
+
+/* Container to hold both cards */
+.page-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Add New Product card (initially hidden offscreen) */
+.add-form {
+  position: absolute;
+  top: 0;
+  right: -100%; /* start hidden off screen */
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 5;
+}
+
+.add-form input,
+.add-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.add-form button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  background: #1abc9c;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, transform 0.06s ease;
+}
+
+.add-form button:hover {
+  background: #16a085;
+  transform: translateY(-2px);
+}
+
+.add-form button.back {
+  background: #e74c3c;
+  margin-left: 10px;
+}
+.add-form button.back:hover {
+  background: #c0392b;
+}
+
+/* Transition states */
+.shift-left {
+  transform: translateX(-60%);
+  transition: transform 0.5s ease;
+}
+
+.add-form.show {
+  right: 0;
+  opacity: 1;
+}
+
