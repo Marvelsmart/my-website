@@ -5,7 +5,7 @@ async function loadProducts() {
   const productsContainer = document.getElementById("product121");
 
   try {
-    const response = await fetch("https://fakestoreapiserver.reactbd.org/api/products?page=4&perPage=5");
+    const response = await fetch("https://fakestoreapiserver.reactbd.org/api/products?page=1&perPage=10");
 
     if (!response.ok) throw new Error("Network response was not ok");
 
@@ -26,9 +26,9 @@ async function loadProducts() {
       product.innerHTML = `
         <img src="${item.image}" alt="${item.title}" class="product-img">
         <h2 class="product-title">${item.title}</h2>
-        <p class="product-price">$${item.price}</p>
-        <p class="H-Description">${item.description}</p>
+        <p class="product-price">$${item.price}</p
         <p class="H-Description">
+        <p class="H-Description">${item.description}</p
         <button class="btn">Buy Now</button>
         <button class="btb"><a href="Cart.html">Add to Cart</a></button>
         </p>

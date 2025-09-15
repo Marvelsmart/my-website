@@ -9,21 +9,21 @@
 <body>
 	<center>
 		<section class="dfd">
-	<form class="main-form">
+	<form class="main-form" id="LoginForm">
 		<h1>log in</h1>
 		<h6>continue to Shopify</h6>
 		<br>
 		<label for="User">E-mail</label>
-		<input type="email" placeholder="Username or Email"name="User">
+		<input type="email" placeholder="Username or Email" id ="Email">
 		<label for="Password">Password</label>
-		<input type="Password" placeholder="Enter a Valid password" name="Password">
-		<button type="Submit">Continue</button>
+		<input type="Password" placeholder="Enter a Valid password" id="password">
+		<button type="submit" id="submit">Continue</button>
 		<div><p id="error-msg" style="color:red; font-size:14px;"></p></div>
 		<h5>New to shopify.? <a href="Signup.html">Get Started &rarr;</a></h5>
 		<h3 style="color: aliceblue;"><a href="../../index.html">Back to home page</h3>
 	</form>
 	</section>
 	</center>
-	<script src="../Js/Script.Js"></script>
+	<script type="module" src="../Js/login.js" defer></script>
 </body>
 </html>
