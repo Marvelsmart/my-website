@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manage-Product</title>
+  <title>Manage Products</title>
   <link rel="stylesheet" href="../../CSS/Admin.css">
 </head>
 <body>
@@ -13,38 +13,48 @@
   </header>
 
   <main class="page-container">
+
     <!-- Manage Products Card -->
     <form class="product-form" id="manageCard">
       <h3>Product Actions</h3>
       <h5>Use the options below to manage your products effectively.</h5>
-      <button type="button" id="addBtn"><h5>Add New Product</h5></button>
-      <button type="button"><h5>Update Existing Product</h5></button>
-      <button type="button"><h5>Remove Product</h5></button>
+      <div class="producti">
+        <button type="button" id="addBtn"><h5>Add New Product</h5></button>
+        <button type="button"><h5>Update Existing Product</h5></button>
+        <button type="button"><h5>Remove Product</h5></button>
+      </div>
       <div class="productQ">
-        <h5><input type="checkbox" name="checkbox">I agree to the Product Management Terms and Conditions.</h5>
+        <h5>
+          <input type="checkbox" name="checkbox">
+          I agree to the Product Management Terms and Conditions.
+        </h5>
       </div>
     </form>
 
     <!-- Add Product Card (hidden initially) -->
-    <!-- Add Product Card (hidden initially) -->
-<form class="add-form" id="addCard">
-  <h3>Add New Product</h3>
-  <input type="text" placeholder="Product Name" required>
-  <input type="number" placeholder="Price" required>
+    <form class="add-form" id="addCard">
+      <h3>Add New Product</h3>
+      <input id="productName" type="text" placeholder="Product Name" required>
+      <input id="productPrice" type="number" placeholder="Price" required>
 
-  <!-- Image upload instead of Category -->
-  <label for="productImage">Product Image</label>
-  <input type="file" id="productImage" accept="image/*" required>
+      <label for="productImage">Product Image</label>
+      <input type="file" id="productImage" accept="image/*" required>
 
-  <textarea placeholder="Description"></textarea>
-  
-  <button type="submit" id="addBtn">Save Product</button>
-  <button type="button" id="backBtn" class="back">⬅ Back</button>
-</form>
+      <textarea id="productDescription" placeholder="Description"></textarea>
+      
+      <button type="submit" id="SaveBtn">Save Product</button>
+      <button type="button" id="backBtn" class="back">⬅ Back</button>
+      <p id="status"></p>
+    </form>
 
   </main>
 
+  <!-- PocketBase JS SDK -->
+  <!--<script src="https://cdn.jsdelivr.net/npm/pocketbase@0.16.3/dist/pocketbase.min.js"></script>
+  <script src="https://cdn.jsdelivr.net//npm/pocketbase@0.26.2/dist/pocketbase.es.mjs"></script>
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/pocketbase@0.26.2/dist/pocketbase.es.mjs"></script>
+  
   <script type="module" src="../../Js/Admin.js"></script>
-
 </body>
 </html>

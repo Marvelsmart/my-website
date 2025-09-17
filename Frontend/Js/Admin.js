@@ -1,75 +1,70 @@
+import PocketBase from '/Frontend/Js/pocketbase.js';
+
 // ----------------- Card Transition -----------------
-const addBtn = document.getElementById("addBtn");
-const backBtn = document.getElementById("backBtn");
-const manageCard = document.getElementById("manageCard");
-const addCard = document.getElementById("addCard");
+document.addEventListener("DOMContentLoaded", () => {
+  const addBtn = document.getElementById("addBtn");
+  const backBtn = document.getElementById("backBtn");
+  const manageCard = document.getElementById("manageCard");
+  const addCard = document.getElementById("addCard");
+  const addProductForm = document.getElementById("addCard");
+  const statusP = document.getElementById("status");
 
-addBtn.addEventListener("click", () => {
-  manageCard.classList.add("shift-left");
-  addCard.classList.add("show");
-});
+  // Show Add Product card
+  addBtn.addEventListener("click", () => {
+    manageCard.classList.add("shift-left");
+    addCard.classList.add("show");
+  });
 
-backBtn.addEventListener("click", () => {
-  manageCard.classList.remove("shift-left");
-  addCard.classList.remove("show");
-});
+  // Back to Manage Products card
+  backBtn.addEventListener("click", () => {
+    manageCard.classList.remove("shift-left");
+    addCard.classList.remove("show");
+  });
 
-// ----------------- Firebase Setup -----------------
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
+  // ----------------- PocketBase Setup -----------------
+  
+  const pb = new PocketBase("http://127.0.0.1:8090"); // Replace with your hosted PocketBase URL if needed
 
-//Your Firebase Config
- const firebaseConfig = {
-    apiKey: "AIzaSyCOKKz6-4pdmqitxHpqWXkNssINovkyJmU",
-    authDomain: "login-1733f.firebaseapp.com",
-    projectId: "login-1733f",
-    storageBucket: "login-1733f.appspot.com",
-    messagingSenderId: "296225886904",
-    appId: "1:296225886904:web:cf7b3dc9f096bed9921a4d"
-  };
+  // ----------------- Add Product Form Submission -----------------
+  addProductForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const storage = getStorage(app);
+    const name = document.getElementById("productName").value.trim();
+    const price = parseFloat(document.getElementById("productPrice").value);
+    const description = document.getElementById("productDescription").value.trim();
+    const fileInput = document.getElementById("productImage");
+    const file = fileInput.files[0];
 
-//Add Product Form 
-const addProductForm = document.getElementById("addCard");
+    if (!file) {
+      statusP.textContent = " Please upload an image.";
+      statusP.style.color = "red";
+      return;
+    }
 
-addProductForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
+    try {
+      statusP.textContent = "Uploading product...";
+      statusP.style.color = "black";
 
-  const name = addProductForm.querySelector("input[type='text']").value;
-  const price = addProductForm.querySelector("input[type='number']").value;
-  const description = addProductForm.querySelector("textarea").value;
-  const file = document.getElementById("productImage").files[0];
+      // Prepare form data for PocketBase
+      const formData = new FormData();
+      formData.append("title", name);    
+      formData.append("price", price);
+      formData.append("description", description);
+      formData.append("image", file);
+console.log(formData);
+      // Create record in PocketBase
+      const record = await pb.collection("products").create(formData);
 
-  if (!file) {
-    alert("Please upload an image.");
-    return;
-  }
+      statusP.textContent = " Product added successfully!";
+      statusP.style.color = "green";
+      console.log("Inserted record:", record);
 
-  try {
-    // 1. Upload image to Firebase Storage
-    const storageRef = ref(storage, `products/${Date.now()}_${file.name}`);
-    await uploadBytes(storageRef, file);
-    const imageUrl = await getDownloadURL(storageRef);
-
-    // 2. Save product info to Firestore
-    await addDoc(collection(db, "products"), {
-      name,
-      price: parseFloat(price),
-      description,
-      image: imageUrl,
-      createdAt: serverTimestamp()
-    });
-
-    alert(" Product added successfully!");
-    addProductForm.reset();
-    backBtn.click();
-  } catch (error) {
-    console.error("Error adding product:", error);
-    alert("Failed to add product.");
-  }
+      addProductForm.reset();
+      backBtn.click();
+    } catch (err) {
+      console.error("Error adding product:", err);
+      statusP.textContent = " Failed to add product. Check console.";
+      statusP.style.color = "red";
+    }
+  });
 });
