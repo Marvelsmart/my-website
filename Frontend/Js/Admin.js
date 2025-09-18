@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ----------------- PocketBase Setup -----------------
   
-  const pb = new PocketBase("http://127.0.0.1:8090"); // Replace with your hosted PocketBase URL if needed
+  const pb = new PocketBase("http://127.0.0.1:8090");
 
   // ----------------- Add Product Form Submission -----------------
   addProductForm.addEventListener("submit", async (e) => {
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Prepare form data for PocketBase
       const formData = new FormData();
-      formData.append("title", name);    
+      formData.append("name", name);    
       formData.append("price", price);
       formData.append("description", description);
       formData.append("image", file);
