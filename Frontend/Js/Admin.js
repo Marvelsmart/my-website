@@ -22,9 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ----------------- PocketBase Setup -----------------
-  
-  const pb = new PocketBase("http://127.0.0.1:8090");
+  //connection to localhost product5
+  //const pb = new PocketBase("http://127.0.0.1:8090");
 
+  //connection to live render url product6
+  const pb = new PocketBase("https://pocketbase-3-ty01.onrender.com");
   // ----------------- Add Product Form Submission -----------------
   addProductForm.addEventListener("submit", async (e) => {
     e.preventDefault();

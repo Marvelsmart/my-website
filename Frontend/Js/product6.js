@@ -1,17 +1,18 @@
-// Online endpoint with focus-view
+import PocketBase from '/Frontend/Js/pocketbase.js';
+
+// Initialize PocketBase with your online endpoint
+const pb = new PocketBase("https://pocketbase-3-ty01.onrender.com");
+
 async function loadProducts() {
-  const productsContainer = document.getElementById("product121");
+  const productsContainer = document.getElementById("product11");
   const focusView = document.querySelector(".focus-view");
   const closeViewBtn = document.getElementById("close-view");
 
   try {
-    const response = await fetch("https://fakestoreapiserver.reactbd.org/api/products?page=1&perPage=10");
-
-    if (!response.ok) throw new Error("Network response was not ok");
-
-    const products = await response.json(); // API returns { data: [...] }
-
-    if (!products.data || products.data.length === 0) {
+    // Fetch all products, sorted by newest
+    const products = await pb.collection("products").getFullList({ sort: "-created" });
+    
+    if (!products || products.length === 0) {
       productsContainer.innerHTML = "<p>No products found</p>";
       return;
     }
@@ -19,35 +20,39 @@ async function loadProducts() {
     // Clear existing content
     productsContainer.innerHTML = "";
 
-    products.data.forEach(item => {
+    products.forEach(item => {
+      const imageUrl = item.image
+        ? `${pb.baseUrl}/api/files/products/${item.id}/${item.image}`
+        : "../Images/placeholder.png";
+
       const product = document.createElement("div");
       product.classList.add("product");
 
       product.innerHTML = `
-        <img src="${item.image}" alt="${item.title}" class="product-img" style="height:200px">
-        <p class="product-title">${item.title}</p>
+        <img src="${imageUrl}" alt="${item.name}" class="product-img" style="height:200px">
+        <p class="product-title">${item.name}</p>
         <p class="product-price">$${item.price}</p>
-
         <p class="H-Description">
-            ${item.description}
-            <button class="btn">Buy Now</button>
-            <button class="btb"><a href="Cart.html">Add to Cart</a></button>
-          </p>
+        ${item.description}
+        <button class="btn">Buy Now</button>
+        <button class="btb"><a href="Cart.html">Add to Cart</a></button>
+        </p>
       `;
 
       // Attach event listener for Buy Now
       product.querySelector(".btn").addEventListener("click", () => {
-        // Hide products
+        // Hide products container
         productsContainer.style.display = "none";
 
         // Fill focus view
-        document.getElementById("focus-img").src = item.image;
-        document.getElementById("focus-title").textContent = item.title;
+        document.getElementById("focus-img").src = imageUrl;
+        document.getElementById("focus-title").textContent = item.name;
         document.getElementById("focus-description").textContent = item.description;
         document.getElementById("focus-price").textContent = "$" + item.price;
 
         // Show focus view
         focusView.classList.add("active");
+        document.body.style.overflow = "hidden"; // prevent scrolling
       });
 
       productsContainer.appendChild(product);
@@ -67,4 +72,4 @@ async function loadProducts() {
 }
 
 // Call the function
-loadProducts();
+document.addEventListener("DOMContentLoaded", loadProducts);

@@ -1,0 +1,60 @@
+/* Focus Mode Container */
+.focus-view {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 40px;
+  background: rgb(1, 1, 27);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  margin: 40px auto;
+  max-width: 1000px;
+  transition: all 0.5s ease;
+}
+
+/* Active Focus Mode */
+.focus-view.active {
+  display: grid;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Left content */
+.focus-left {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Right image */
+.focus-right img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* Back button */
+#close-view {
+  margin-top: 20px;
+  background: crimson;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#close-view:hover {
+  background: darkred;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Hide grid when in focus */
+.products.hidden {
+  display: none;
+}

@@ -10,13 +10,12 @@ fetch("../txt/product1.txt")
       return;
     }
 
-    // Split file into blocks by empty lines
+    // Split file into blocks
     const blocks = text.split(/\n\s*\n/);
 
     blocks.forEach((block, i) => {
-      if (!block.trim()) return; // skip empty
+      if (!block.trim()) return;
 
-      // Parse key: value pairs
       const product = {};
       block.split(/\n/).forEach(line => {
         const [key, ...rest] = line.split(":");
@@ -24,12 +23,9 @@ fetch("../txt/product1.txt")
         product[key.trim().toLowerCase()] = rest.join(":").trim();
       });
 
-      if (!product.name) {
-        console.warn(`Skipping block ${i+1}, no name found`, block);
-        return;
-      }
+      if (!product.name) return;
 
-      // Create product card
+      // Create card
       const div = document.createElement("div");
       div.className = "product";
       div.innerHTML = `
@@ -42,7 +38,25 @@ fetch("../txt/product1.txt")
           <button class="btb"><a href="Cart.html">Add to Cart</a></button>
         </p>
       `;
+
+      // Hook up Buy button → open focus view
+      div.querySelector(".btn").addEventListener("click", () => {
+        document.querySelector(".products").classList.add("hidden");
+        const focus = document.querySelector(".focus-view");
+        focus.classList.add("active");
+        document.getElementById("focus-title").textContent = product.name;
+        document.getElementById("focus-description").textContent = product.description || "";
+        document.getElementById("focus-price").textContent = `Price: ${product.price || 'N/A'}`;
+        document.getElementById("focus-img").src = product.image || "../Images/placeholder.png";
+      });
+
       container.appendChild(div);
+    });
+
+    // Close focus view
+    document.getElementById("close-view").addEventListener("click", () => {
+      document.querySelector(".products").classList.remove("hidden");
+      document.querySelector(".focus-view").classList.remove("active");
     });
   })
   .catch(err => console.error("Error loading products.txt:", err));

@@ -125,70 +125,147 @@ footer {
     width: 100%;
     color: black;	
 }
-
+/* Product grid */
 .products {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap:Wrap;
-    gap: 30px;
-    padding: 40px 0;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .product {
-    position: relative;
-    flex: 1 1 calc(17 - 15px);
-    max-width: calc(17% - 15px);
-    height: 300px;
-    background-color: #000;
-    background: rgb(1, 1, 27);
-    border-radius: 8px;
-    box-shadow: 0 0px 15px rgb(120, 120, 120);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    overflow: hidden;
+  position: relative;
+  flex: 1 1 calc(25% - 20px);
+  max-width: calc(25% - 20px);
+  height: 320px;
+  background: rgb(1, 1, 27);
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(120, 120, 120, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.product img:hover {
+  transform: scale(1.05);
+}
+
+.product p {
+  color: antiquewhite;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .H-Description {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 20px;
-    background: rgba(0,0,0,0.9);
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    transform: translateY(100%);
-    opacity: 0;
-    transition: all 0.4s ease-in-out;
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
 }
-
 .product:hover .H-Description {
-    transform: translateY(0);
-    opacity: 1;
+  transform: translateY(0);
+  opacity: 1;
 }
 
+/* Buttons */
+.btn, .btb {
+  margin: 8px 5px 0;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn {
+  background: #007bff;
+  color: #fff;
+}
+.btn:hover {
+  background: #0056b3;
+}
+.btb {
+  background: crimson;
+}
+.btb:hover {
+  background: darkred;
+}
+.btb a {
+  color: white;
+  text-decoration: none;
+}
 
-.product img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, .0, 0.1);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-    max-width: 250px;
+/* Focus View (big preview) */
+.focus-view {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 40px;
+  background: rgb(1, 1, 27);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  margin: 40px auto;
+  max-width: 1000px;
 }
-.product img:hover {
-    transform: scale(1.05);
+
+.focus-view.active {
+  display: grid;
+  animation: fadeIn 0.5s ease forwards;
 }
-.product p {
-    color: antiquewhite;
-    margin-top: 15px;
-    text-align: center;
+
+.focus-left {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.focus-right img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* Back button */
+#close-view {
+  margin-top: 20px;
+  background: crimson;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#close-view:hover {
+  background: darkred;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+.products.hidden {
+  display: none;
 }
 
 .menu {
@@ -238,24 +315,7 @@ footer {
 section {
     color: black;
 }
-.btb{
-    text-decoration: none;
-    padding: 10px 20px;
-    background-color: crimson;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: auto;
-    margin-bottom: 250px;
-}
-.btb a {
-    text-decoration: none;
-    color: white;
-}
-.btb:hover {
-    background-color: darkred;
-}
+
 @media (max-width: 992px) {
   .product {
     flex: 1 1 calc(33.333% - 20px);
@@ -538,3 +598,65 @@ form button:hover {
   accent-color: #2e7d32;
   cursor: pointer;
 }
+
+/* Focus Mode Container */
+.focus-view {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 40px;
+  background: rgb(1, 1, 27);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  margin: 40px auto;
+  max-width: 1000px;
+  transition: all 0.5s ease;
+}
+
+/* Active Focus Mode */
+.focus-view.active {
+  display: grid;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Left content */
+.focus-left {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Right image */
+.focus-right img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* Back button */
+#close-view {
+  margin-top: 20px;
+  background: crimson;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#close-view:hover {
+  background: darkred;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Hide grid when in focus */
+.products.hidden {
+  display: none;
+}
+

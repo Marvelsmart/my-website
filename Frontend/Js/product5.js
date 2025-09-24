@@ -32,6 +32,8 @@ async function loadProducts() {
         <button class="btb"><a href="Cart.html">Add to Cart</a></button>
         </p>
       `;
+      
+      
 
       container.appendChild(product);
     });

@@ -5,12 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
     <link rel="stylesheet" href="../CSS/index.css"> 
+    <link rel="stylesheet" href="../CSS/Focus.css">
 </head>
 <body>
+    
    <div id="menu-placeholder"></div>
+
+   <div class="focus-view">
+    <div class="focus-left">
+        <h2 id="focus-title"></h2>
+        <p id="focus-description"></p>
+        <p id="focus-price"></p>
+        <button class="btn">Buy Now</button>
+        <button id="close-view">Back</button>
+    </div>
+    <div class="focus-right">
+    <img id="focus-img" src="" alt="Product Image">
+    </div>
+    </div>
+
   <div class="cart-section">
     <a href="Cart.html">
-    <img src="../Images/shop.jpg" alt="cart" class="prdimg">
+    <img src="../../Images/shop.jpg" alt="cart" class="prdimg">
     </a>
     <section class="products">
         <div class="product">
@@ -93,6 +109,8 @@
             </p>
             
         </div>
+
+        
         <div class="payment">
     <span class="close">X</span>
     <h1 class="payTitle"> Personal Information</h1>
@@ -119,5 +137,6 @@
         </section>
         <button id="backToTop">^</button>
         <script src="../Js/java.js"></script>
+        <script src="../Js/focus.js"></script>
 </body>
 </html> 
